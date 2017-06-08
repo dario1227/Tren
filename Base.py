@@ -2,6 +2,7 @@ import os
 import time
 from tkinter import messagebox
 from tkinter import *
+from tkinter import ttk
 import winsound
 from threading import Thread
 import threading
@@ -96,17 +97,17 @@ def cargarimagen(nombre):
     imagen = PhotoImage(file=ruta)
     return imagen
 def ayuda():
-    #ventana help
+    #ventana ayuda
     ventana_menu.withdraw()
     ventanaayuda = Toplevel()
     ventanaayuda.title("Ayuda")
-    ventanaayuda.geometry("800x700+300+0")
+    ventanaayuda.geometry("400x300+400+200")
     ventanaayuda.resizable(width=NO,height=NO)
-    #canvas del help
-    contenedor_ayuda=Canvas(ventanaayuda,width=800,height=700,bg="#ffffff")
+    #canvas de la ayuda
+    contenedor_ayuda=Canvas(ventanaayuda,width=400,height=300,bg="#ffffff")
     contenedor_ayuda.place(x=0,y=0)
-    #label de help
-    ayuda=Label(contenedor_ayuda,bg="#896532",width=75,height=30)
+    #label de ayuda
+    ayuda=Label(contenedor_ayuda,bg="#896532",width=400,height=300)
     ayuda.place(x=0,y=0)
     #destruye la ventana y abre la principal
     def regresar():
@@ -117,17 +118,17 @@ def ayuda():
     botonR.place(x=1,y=1)
     mainloop()
 def simulacion():
-    #ventana help
+    #ventana simulación
     ventana_menu.withdraw()
     ventanasimu = Toplevel()
     ventanasimu.title("Simulacion")
-    ventanasimu.geometry("800x700+300+0")
+    ventanasimu.geometry("1200x600+50+50")
     ventanasimu.resizable(width=NO,height=NO)
-    #canvas del help
-    contenedor_simu=Canvas(ventanasimu,width=800,height=700,bg="#ffffff")
+    #canvas de la simulación
+    contenedor_simu=Canvas(ventanasimu,width=1200,height=600,bg="#ffffff")
     contenedor_simu.place(x=0,y=0)
-    #label de help
-    ayuda=Label(contenedor_simu,bg="#896532",width=75,height=30)
+    #label de la simulación
+    ayuda=Label(contenedor_simu,bg="#896532",width=800,height=700)
     ayuda.place(x=0,y=0)
     #destruye la ventana y abre la principal
     def regresar():
@@ -138,18 +139,21 @@ def simulacion():
     botonR.place(x=1,y=1)
     mainloop()
 def horarios():
-    #ventana help
+    #ventana horario
     ventana_menu.withdraw()
     ventanahora = Toplevel()
-    ventanahora.title("Help")
-    ventanahora.geometry("800x700+300+0")
+    ventanahora.title("Horarios")
+    ventanahora.geometry("400x300+400+200")
     ventanahora.resizable(width=NO,height=NO)
-    #canvas del help
-    contenedor_hora=Canvas(ventanahora,width=800,height=700,bg="#ffffff")
+    #canvas del horario
+    contenedor_hora=Canvas(ventanahora,width=400,height=300,bg="#ffffff")
     contenedor_hora.place(x=0,y=0)
-    #label de help
-    ayuda=Label(contenedor_hora,bg="#896532",width=75,height=30)
+    #label de horario
+    ayuda=Label(contenedor_hora,bg="#896532",width=400,height=300)
     ayuda.place(x=0,y=0)
+    combo=ttk.Combobox(contenedor_hora)
+    combo.place(x=100,y=0)
+    combo["values"]=("6:00","7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00")
     #destruye la ventana y abre la principal
     def regresar():
         ventanahora.destroy()
