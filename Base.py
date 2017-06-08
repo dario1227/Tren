@@ -122,7 +122,7 @@ def simulacion():
     ventana_menu.withdraw()
     ventanasimu = Toplevel()
     ventanasimu.title("Simulacion")
-    ventanasimu.geometry("1200x600+50+50")
+    ventanasimu.geometry("1200x600+75+50")
     ventanasimu.resizable(width=NO,height=NO)
     #canvas de la simulación
     contenedor_simu=Canvas(ventanasimu,width=1200,height=600,bg="#ffffff")
